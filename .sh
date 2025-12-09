@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-shopt -s expand_aliases
-flag() {
-	for f in "$@"
-		do [[ -e ".flags/$f" ]] || return 1
-	done
-}
 DOC="README.md"
 rm -f "$DOC"
 touch "$DOC"
