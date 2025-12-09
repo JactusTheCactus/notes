@@ -12,15 +12,16 @@ touch "$DOC"
 for i in pages/*; do
 	case "${i#*.}" in
 		md)
+			[[ <"$i" != "" ]] || continue
 			{
 				echo "$i" | perl -pe '
 					s|^pages/(\w+)\.\w+$|# $1|g;
 					s|_| |g;
 					s|\b(\w)(\w*)\b|\u$1\L$2|g;
 				'
-				echo "$(<"$i")" | perl -pe '
-					s|^\s*(?=\n)$|```\nN/A\n```|g;
-				'
+				echo "$(<"$i")" #| perl -pe '
+					#s|^\s*(?=\n)$|```\nN/A\n```|g;
+				#'
 			} >> "$DOC"
 		;;
 	esac
