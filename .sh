@@ -20,7 +20,8 @@ rm "$DOC"
 touch "$DOC"
 for i in pages/*
 	do
-		if [[ ! -z "$(cat "$i")" ]]
+		t="$(cat "$i")"
+		if [[ ! -z "$t" ]]
 			then
 				case "${i#*.}" in
 					md)
@@ -31,10 +32,7 @@ for i in pages/*
 								s|\b(\w)(\w*)\b|\u$1\L$2|g;
 							'
 						)"
-						{
-							echo "# ${n^}"
-							cat "$i"
-						} >> "$DOC"
+						echo -e "# $n\n$t" >> "$DOC"
 					;;
 				esac
 		fi
