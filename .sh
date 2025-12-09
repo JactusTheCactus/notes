@@ -9,13 +9,13 @@ flag() {
 DIRS=(
 	logs
 )
-LOG="logs/notes.log"
-DOC="README.md"
 for i in "${DIRS[@]}"
 	do
 		rm -rf "$i" || :
 		mkdir -p "$i"
 done
+LOG="logs/notes.log"
+DOC="README.md"
 rm "$DOC"
 touch "$DOC"
 exec > "$LOG" 2>& 1
