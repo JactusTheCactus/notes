@@ -22,6 +22,7 @@ for i in pages/*.md
 	do
 		t="$(cat "$i")"
 		if [[ ! -z "$t" ]]
-			then echo -e "# $i\n$t" >> "$DOC"
+			n=$(echo "$i" | perl -pe 's/pages/(.*?)\.md/$1/g')
+			then echo -e "# ${n^}\n$t" >> "$DOC"
 		fi
 done
