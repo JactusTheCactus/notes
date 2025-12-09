@@ -1,1 +1,1 @@
-- Something with AMD64 Asm (`x86_64`)
+- Something with AMD64 Assembly (`x86_64`)
