@@ -1,4 +1,4 @@
-# Projects
+# Project Ideas
 
 # Quotes
 - > How high can you fly with broken wings?
