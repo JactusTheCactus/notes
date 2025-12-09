@@ -9,20 +9,19 @@ flag() {
 DOC="README.md"
 rm -f "$DOC"
 touch "$DOC"
-for i in pages/*
-	do
-		t="$(<"$i")"
-		[[ -n "$t" ]] || continue
-		case "${i#*.}" in
-			md)
-				n="$(echo "$i" \
-					| perl -pe '
+for i in pages/*; do
+	t="$(<"$i")"
+	[[ -n "$t" ]] || continue
+	case "${i#*.}" in
+		md)
+			{
+				echo "# $i" | perl -pe '
 						s|^pages/(\w+)\.\w+$|$1|g;
 						s|_| |g;
 						s|\b(\w)(\w*)\b|\u$1\L$2|g;
 					'
-				)"
-				echo -e "# $n\n$t" >> "$DOC"
-			;;
-		esac
+				echo "$t"
+			} >> "$DOC"
+		;;
+	esac
 done
