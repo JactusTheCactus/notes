@@ -21,8 +21,8 @@ touch "$DOC"
 for i in pages/*.md
 	do
 		t="$(cat "$i")"
-		if [[ ! -z "$t" ]]
-			n=$(echo "$i" | perl -pe 's/pages\/(.*?)\.md/$1/g')
+		if [[ ! -z "$(echo "$t" | perl -pe 's/[\s\n]//g')" ]]
+			n=$(echo "$i" | perl -pe 's|pages/(.*?)\.md|$1|g')
 			then echo -e "# ${n^}\n$t" >> "$DOC"
 		fi
 done
