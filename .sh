@@ -22,10 +22,9 @@ for i in pages/*
 	do
 		if [[ ! -z "$(cat "$i")" ]]
 			then
-				case "${i%*.}" in
+				case "${i#*.}" in
 					md)
 						n="$(echo "$i" | perl -pe 's|^pages/(\w+)\.\w+$|$1|g')"
-						echo "$n"
 						{
 							echo "# ${n^}"
 							cat "$i"
