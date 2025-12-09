@@ -18,7 +18,6 @@ LOG="logs/notes.log"
 DOC="README.md"
 rm "$DOC"
 touch "$DOC"
-rm pages/test_page.md
 for i in pages/*
 	do
 		if [[ ! -z "$(cat "$i")" ]]
