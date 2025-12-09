@@ -16,7 +16,7 @@ for i in "${DIRS[@]}"
 done
 LOG="logs/notes.log"
 DOC="README.md"
-rm "$DOC"
+rm -f "$DOC"
 touch "$DOC"
 for i in pages/*
 	do
