@@ -21,7 +21,6 @@ echo "# Notes" > "$DOC"
 for i in pages/*.md
 	do
 		t="$(cat "$i")"
-		# if [[ ! -z "$(echo "$t" | perl -pe 's/[\s\n]//g')" ]]
 		if [[ ! -z "$t" ]]
 			then
 				n="$(echo "$i" | perl -pe 's|pages/(.*?)\.md|$1|g')"
