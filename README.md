@@ -1,3 +1,5 @@
+# Project Ideas
+- Something with AMD64 Asm (`x86_64`)
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
