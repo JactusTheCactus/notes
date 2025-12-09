@@ -6,15 +6,14 @@ touch "$DOC"
 for i in pages/*; do
 	case "${i#*.}" in
 		md)
-			t="$(<"$i")"
-			[[ -n "$t" ]] || continue
+			[[ -n "$(<"$i")" ]] || continue
 			{
 				echo "$i" | perl -pe '
 					s|^pages/(\w+)\.\w+$|# $1|g;
 					s|_| |g;
 					s|\b(\w)(\w*)\b|\u$1\L$2|g;
 				'
-				echo "$t"
+				cat "$i"
 			} >> "$DOC"
 		;;
 	esac
