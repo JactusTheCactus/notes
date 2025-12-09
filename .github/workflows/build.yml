@@ -4,16 +4,14 @@ on:
     branches: [main]
   workflow_dispatch:
 jobs:
-  run-script:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Run Script
-        run: |
-          chmod +x .sh
-          ./.sh
-      - name: Commit changes to main
+        run: ./.sh
+      - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
