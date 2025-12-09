@@ -21,7 +21,7 @@ touch "$DOC"
 for i in pages/*
 	do
 		t="$(cat "$i")"
-		if [[ ! -z "$t" ]]
+		if [[ -n "$t" ]]
 			then
 				case "${i#*.}" in
 					md)
