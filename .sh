@@ -12,7 +12,7 @@ touch "$DOC"
 for i in pages/*; do
 	case "${i#*.}" in
 		md)
-			[[ <"$i" != "" ]] || continue
+			[[ "$(<"$i")" != "" ]] || continue
 			{
 				echo "$i" | perl -pe '
 					s|^pages/(\w+)\.\w+$|# $1|g;
