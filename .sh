@@ -19,7 +19,7 @@ for i in pages/*; do
 					s|\b(\w)(\w*)\b|\u$1\L$2|g;
 				'
 				echo "$(<"$i")" | perl -pe '
-					s|^\s*$|```\nN/A\n```|g;
+					s|^\s*(?=\n)$|```\nN/A\n```|g;
 				'
 			} >> "$DOC"
 		;;
