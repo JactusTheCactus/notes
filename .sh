@@ -9,6 +9,7 @@ flag() {
 DOC="README.md"
 rm -f "$DOC"
 touch "$DOC"
+mv pages/projects.md pages/project_ideas.md
 for i in pages/*; do
 	case "${i#*.}" in
 		md)
