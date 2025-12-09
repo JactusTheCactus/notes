@@ -12,19 +12,17 @@ touch "$DOC"
 for i in pages/*
 	do
 		t="$(<"$i")"
-		if [[ -n "$t" ]]
-			then
-				case "${i#*.}" in
-					md)
-						n="$(echo "$i" \
-							| perl -pe '
-								s|^pages/(\w+)\.\w+$|$1|g;
-								s|_| |g;
-								s|\b(\w)(\w*)\b|\u$1\L$2|g;
-							'
-						)"
-						echo -e "# $n\n$t" >> "$DOC"
-					;;
-				esac
-		fi
+		[[ -n "$t" ]] || continue
+		case "${i#*.}" in
+			md)
+				n="$(echo "$i" \
+					| perl -pe '
+						s|^pages/(\w+)\.\w+$|$1|g;
+						s|_| |g;
+						s|\b(\w)(\w*)\b|\u$1\L$2|g;
+					'
+				)"
+				echo -e "# $n\n$t" >> "$DOC"
+			;;
+		esac
 done
