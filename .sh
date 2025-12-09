@@ -20,7 +20,7 @@ rm "$DOC"
 touch "$DOC"
 for i in pages/*
 	do
-		t="$(cat "$i")"
+		t="$(<"$i")"
 		if [[ -n "$t" ]]
 			then
 				case "${i#*.}" in
