@@ -10,7 +10,7 @@ DOC="README.md"
 rm -f "$DOC"
 touch "$DOC"
 for i in pages/*; do
-	[[ -s "$i" ]] || continue
+	[ -s "$i" ] || continue
 	case "${i#*.}" in
 		md)
 			{
