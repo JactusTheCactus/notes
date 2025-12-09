@@ -18,7 +18,7 @@ LOG="logs/notes.log"
 DOC="README.md"
 rm "$DOC"
 touch "$DOC"
-exec > "$LOG" 2>& 1
+# exec > "$LOG" 2>& 1
 for i in notes/*.md
 	do
 		{
