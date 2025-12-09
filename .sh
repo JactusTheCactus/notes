@@ -18,14 +18,18 @@ LOG="logs/notes.log"
 DOC="README.md"
 rm "$DOC"
 touch "$DOC"
-for i in pages/*.md
+for i in pages/*
 	do
 		if [[ ! -z "$(cat "$i")" ]]
 			then
-				n="$(echo "$i" | perl -pe 's|pages/(.*?)\.md|$1|g')"
-				{
-					echo "# ${n^}"
-					cat "$i"
-				} >> "$DOC"
+				case "${i%*.}" in
+					md)
+						n="$(echo "$i" | perl -pe 's|^pages/(\w+*?)\.\w+$|$1|g')"
+						{
+							echo "# ${n^}"
+							cat "$i"
+						} >> "$DOC"
+					;;
+				esac
 		fi
 done
