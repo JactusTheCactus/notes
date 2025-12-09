@@ -18,7 +18,9 @@ for i in pages/*; do
 					s|_| |g;
 					s|\b(\w)(\w*)\b|\u$1\L$2|g;
 				'
-				echo "$(<"$i")"
+				echo "$(<"$i")" | perl -pe '
+					s|^[\s\n]*$|N/A|g;
+				'
 			} >> "$DOC"
 		;;
 	esac
