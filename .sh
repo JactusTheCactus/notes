@@ -18,11 +18,10 @@ LOG="logs/notes.log"
 DOC="README.md"
 rm "$DOC"
 touch "$DOC"
-# exec > "$LOG" 2>& 1
 for i in pages/*.md
 	do
-		{
-			echo "# $i"
-			cat "$i"
-		} >> "$DOC"
+		t="$(cat "$i")"
+		if [[ ! -z "$t" ]]
+			then echo -e "# $i\n$t" >> "$DOC"
+		fi
 done
