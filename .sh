@@ -17,13 +17,15 @@ done
 LOG="logs/notes.log"
 DOC="README.md"
 rm "$DOC"
-echo "# Notes" > "$DOC"
+touch "$DOC"
 for i in pages/*.md
 	do
-		t="$(cat "$i")"
-		if [[ ! -z "$t" ]]
+		if [[ ! -z "$(cat "$i")" ]]
 			then
 				n="$(echo "$i" | perl -pe 's|pages/(.*?)\.md|$1|g')"
-				echo -e "## ${n^}\n$t" >> "$DOC"
+				{
+					echo "# ${n^}"
+					cat "$i"
+				} >> "$DOC"
 		fi
 done
