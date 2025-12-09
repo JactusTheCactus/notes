@@ -28,7 +28,7 @@ for i in pages/*
 							| perl -pe '
 								s|^pages/(\w+)\.\w+$|$1|g;
 								s|_| |g;
-								s|\b(\w)|\U$1|g;
+								s|\b(\w)(\w*)\b|\U$1\L$2|g;
 							'
 						)"
 						{
