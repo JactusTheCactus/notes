@@ -15,8 +15,8 @@ for i in pages/*; do
 	case "${i#*.}" in
 		md)
 			{
-				echo "# $i" | perl -pe '
-					s|^pages/(\w+)\.\w+$|$1|g;
+				echo "$i" | perl -pe '
+					s|^pages/(\w+)\.\w+$|# $1|g;
 					s|_| |g;
 					s|\b(\w)(\w*)\b|\u$1\L$2|g;
 				'
