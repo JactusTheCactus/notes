@@ -25,6 +25,7 @@ for i in pages/*
 				case "${i%*.}" in
 					md)
 						n="$(echo "$i" | perl -pe 's|^pages/(\w+)\.\w+$|$1|g')"
+						echo "$n"
 						{
 							echo "# ${n^}"
 							cat "$i"
