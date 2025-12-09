@@ -19,7 +19,7 @@ DOC="README.md"
 rm "$DOC"
 touch "$DOC"
 # exec > "$LOG" 2>& 1
-for i in notes/*.md
+for i in pages/*.md
 	do
 		{
 			echo "# $i"
