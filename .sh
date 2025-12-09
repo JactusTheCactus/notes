@@ -24,11 +24,13 @@ for i in pages/*
 			then
 				case "${i#*.}" in
 					md)
-						n="$(echo "$i" | perl -pe '
-							s|^pages/(\w+)\.\w+$|$1|g;
-							s|_| |g;
-							s|\b(\w)|\U$1|g;
-						')"
+						n="$(echo "$i" \
+							| perl -pe '
+								s|^pages/(\w+)\.\w+$|$1|g;
+								s|_| |g;
+								s|\b(\w)|\U$1|g;
+							'
+						)"
 						{
 							echo "# ${n^}"
 							cat "$i"
