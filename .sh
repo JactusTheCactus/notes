@@ -6,15 +6,6 @@ flag() {
 		do [[ -e ".flags/$f" ]] || return 1
 	done
 }
-DIRS=(
-	logs
-)
-for i in "${DIRS[@]}"
-	do
-		rm -rf "$i" || :
-		mkdir -p "$i"
-done
-LOG="logs/notes.log"
 DOC="README.md"
 rm -f "$DOC"
 touch "$DOC"
