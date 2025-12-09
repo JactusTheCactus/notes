@@ -16,10 +16,10 @@ for i in pages/*; do
 		md)
 			{
 				echo "# $i" | perl -pe '
-						s|^pages/(\w+)\.\w+$|$1|g;
-						s|_| |g;
-						s|\b(\w)(\w*)\b|\u$1\L$2|g;
-					'
+					s|^pages/(\w+)\.\w+$|$1|g;
+					s|_| |g;
+					s|\b(\w)(\w*)\b|\u$1\L$2|g;
+				'
 				echo "$t"
 			} >> "$DOC"
 		;;
