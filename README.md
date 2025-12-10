@@ -1,7 +1,10 @@
 # Project Ideas
-- Something with Assembly
+## Languages
+1. Something with Assembly
 	- AMD64 (`x86_64`)
-	- GNU Assembler (GAS)# Quotes
+	- GNU Assembler (GAS)
+2. Ruby
+# Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
   > Eating my wings to keep me tame
