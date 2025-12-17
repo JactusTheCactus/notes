@@ -5,8 +5,8 @@ rm -f $DOC
 touch $DOC
 for i in pages/*; do
 	case ${i#*.} in
+		[[ -n "$(<$i)" ]] || continue
 		md)
-			[[ -n "$(<$i)" ]] || continue
 			{
 				echo $i | perl -pe '
 					s|^pages/(\w+)\.\w+$|# $1|g;
