@@ -4,8 +4,8 @@ DOC=README.md
 rm -f $DOC
 touch $DOC
 for i in pages/*; do
+	[[ -n "$(<$i)" ]] || continue
 	case ${i#*.} in
-		[[ -n "$(<$i)" ]] || continue
 		md)
 			{
 				echo $i | perl -pe '
