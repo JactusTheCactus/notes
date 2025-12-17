@@ -3,7 +3,7 @@
 1. Something with Assembly
 	- AMD64 (`x86_64`)
 	- GNU Assembler (GAS)
-2. Ruby
+1. Ruby
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
