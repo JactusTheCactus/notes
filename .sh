@@ -5,17 +5,15 @@ rm -f $DOC
 touch $DOC
 for i in pages/*; do
 	[[ -n "$(<$i)" ]] || continue
-	case ${i#*.} in
+	case "${i#*.}" in
 		md)
 			{
-				echo $i | perl -pe '
+				echo "$i" | perl -pe '
 					s|^pages/(\w+)\.\w+$|# $1|g;
 					s|_| |g;
 					s|\b(\w)(\w*)\b|\u$1\L$2|g;
 				'
-				cat $i | perl -pe '
-					s|^#|##|g
-				'
+				cat "$i" | perl -pe 's|^#|##|g'
 			} >> $DOC
 		;;
 	esac
