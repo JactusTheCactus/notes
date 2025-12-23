@@ -14,6 +14,7 @@ for i in pages/*; do
 				s|\b(\w)(\w*)\b|\u$1\L$2|g;
 			'
 			cat "$i" | perl -pe 's|^#|##|g'
+			echo
 		;;
 	esac
 done
