@@ -4,6 +4,7 @@ DOC=README.md
 rm -f "$DOC"
 touch "$DOC"
 exec > "$DOC" 2>& 1
+find pages -empty -delete
 for i in pages/*; do
 	[[ -n "$(<$i)" ]] || continue
 	case "${i#*.}" in
