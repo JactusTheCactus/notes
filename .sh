@@ -4,7 +4,7 @@ DOC=README.md
 rm -f "$DOC"
 touch "$DOC"
 exec > "$DOC" 2>& 1
-find pages -empty -delete
+find . -empty -delete
 for i in pages/*
 	do
 		printf '# %s\n' "$(echo "$i" | perl -pe '
