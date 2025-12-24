@@ -14,7 +14,9 @@ for i in pages/*
 		')"
 		case "${i#*.}" in
 			md)
-				printf '%s\n' "$(cat "$i" | perl -pe 's|^#|##|g')"
+				printf '%s\n' "$(cat "$i" \
+					| perl -pe 's|^#|##|g'
+				)"
 			;;
 		esac
 done
