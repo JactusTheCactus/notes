@@ -17,7 +17,7 @@ for i in pages/*
 				printf '%s\n' "$(cat "$i" | perl -pe 's|^#|##|g')"
 			;;
 			yml)
-				printf '%s\n' "$(cat "$i")"
+				printf '%s\n' "$(cat "$i" | perl -pe 's|:$||g')"
 			;;
 		esac
 done
