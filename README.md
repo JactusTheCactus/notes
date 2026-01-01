@@ -1,5 +1,7 @@
 # Names
 - Whalefall
+# Project Ideas
+- QB64 incremental game
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
