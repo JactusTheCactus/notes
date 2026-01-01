@@ -12,12 +12,13 @@ for i in pages/*
 			s|_| |g;
 			s|\b(\w)(\w*)\b|\u$1\L$2|g;
 		')"
+		page=""
 		case "${i#*.}" in
-			md)
-				printf '%s\n' "$(cat "$i" | perl -pe 's|^#|##|g')"
-			;;
-			yml)
-				printf '%s\n' "$(cat "$i" | perl -pe 's|:$||g')"
-			;;
+			md) page="$(cat "$i" | perl -pe 's|^#|##|g')";;
+			yml) page="$(cat "$i" | perl -pe '
+				s|:$||g;
+				s|  |\t|g;
+			')";;
 		esac
+		printf '%s\n' "$page"
 done
