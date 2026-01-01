@@ -5,11 +5,6 @@ DOC=README.md
 rm -f "$DOC"
 touch "$DOC"
 exec &> "$DOC"
-if find pages -name \*.yml &> /dev/null
-	then printf '> [!%s]\n> %s\n' \
-		"WARNING" \
-		"YAML conversion is currently broken :("
-fi
 for i in pages/*
 	do
 		printf '# %s\n' "$(echo "$i" | perl -pe '
