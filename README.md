@@ -2,12 +2,12 @@
 > YAML conversion is currently broken :(
 # Names
 > [!WARNING]
-> YAML conversion is currently broken :(
+> > YAML conversion is currently broken :(
 > - Whalefall
 > 	- Whalefall
 # Project Ideas
 > [!WARNING]
-> YAML conversion is currently broken :(
+> > YAML conversion is currently broken :(
 > - {"`QB64` incremental game":["extra logic can be written in `C`/`C++`"]}
 > 	- `QB64` incremental game
 > 		- extra logic can be written in `C`/`C++`
