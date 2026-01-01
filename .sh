@@ -13,6 +13,7 @@ for i in pages/*
 			s|\b(\w)(\w*)\b|\u$1\L$2|g;
 		')"
 		case "${i#*.}" in
-			md|yml) printf '%s\n' "$(cat "$i" | perl -pe 's|^#|##|g')";;
+			md) printf '%s\n' "$(cat "$i" | perl -pe 's|^#|##|g')";;
+			yml) printf '%s\n' "$(cat "$i")";;
 		esac
 done
