@@ -1,7 +1,7 @@
 # Names
 - Whalefall
 # Project Ideas
-- QB64 incremental game:
+- QB64 incremental game
     - extra logic can be written in C++
 # Quotes
 - > How high can you fly with broken wings?
