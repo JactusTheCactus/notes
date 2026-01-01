@@ -1,5 +1,3 @@
-> [!WARNING]
-> YAML conversion is currently broken :(
 # Names
 > [!WARNING]
 > > YAML conversion is currently broken :(
