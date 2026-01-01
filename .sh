@@ -22,7 +22,7 @@ for i in pages/*
 			md) page="$(cat "$i" | perl -pe 's|^#|##|g')";;
 			yml)
 				#page="$(cat "$i" | perl -pe 's|:$||g;s|  |\t|g;')"
-				page="$(printf '> [!WARNING]\n> YAML conversion is currently broken :(\n%s\n' "$(cat "$i" \
+				page="$(printf '> [!WARNING]\n> > YAML conversion is currently broken :(\n%s\n' "$(cat "$i" \
 					| yq -o json \
 					| jq -r -f scripts/to_md.jq \
 					| perl -pe 's|^|> |g'
