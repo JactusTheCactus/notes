@@ -10,7 +10,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Remove extra files
-        run: "rm scripts/switch-case.awk || :"
+        run: "rm scripts/switch-case.d.ts || :"
       - name: Pre-Build
         run: npm ci
       - name: Build
