@@ -14,7 +14,7 @@ jobs:
       - name: Build
         run: ./.sh
       - name: Remove extra files
-        run: :
+        run: rm _.sh
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
