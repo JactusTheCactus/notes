@@ -9,12 +9,12 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+      - name: Remove extra files
+        run: rm _.sh
       - name: Pre-Build
         run: npm ci
       - name: Build
         run: ./.sh
-      - name: Remove extra files
-        run: rm _.sh
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
