@@ -9,6 +9,7 @@ jq+() {
 	done < <(find scripts -name \*.js)
 	jq -rf "$temp"
 }
+mv pages/project_ideas.yml pages/project_ideas.md
 find . -empty -delete
 DOC=README.md
 rm -rf "$DOC" &> /dev/null || :
