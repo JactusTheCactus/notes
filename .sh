@@ -14,6 +14,7 @@ DOC=README.md
 rm -rf "$DOC" &> /dev/null || :
 touch "$DOC"
 exec &> "$DOC"
+mv scripts/yml-to-md.jq scripts/yml-to-md.jqp
 tsc
 trap 'rm scripts/switch-case.js' EXIT
 while read -r i
@@ -36,7 +37,7 @@ while read -r i
 			md)page="$(perl -pe 's|^#|##|g' "$i")";;
 			yml)
 				page="$(yq -o json "$i" \
-					| jq+ scripts/yml-to-md.jq
+					| jq+ scripts/yml-to-md.jqp
 				)"
 			;;
 		esac
