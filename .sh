@@ -14,7 +14,6 @@ DOC=README.md
 rm -rf "$DOC" &> /dev/null || :
 touch "$DOC"
 exec &> "$DOC"
-mv scripts/yml-to-md.jq scripts/yml-to-md.jqp
 tsc
 trap 'rm scripts/switch-case.js' EXIT
 while read -r i
