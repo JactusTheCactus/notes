@@ -15,6 +15,7 @@ rm -rf "$DOC" &> /dev/null || :
 touch "$DOC"
 exec &> "$DOC"
 tsc
+trap 'rm scripts/switch-case.js' EXIT
 while read -r i
 	do
 		# file names can be prefixed with numbers
