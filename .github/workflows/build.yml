@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+      - name: Pre-Build
+        run: npm ci
       - name: Build
         run: ./.sh
       - name: Commit changes
