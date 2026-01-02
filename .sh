@@ -7,13 +7,11 @@ jq+() {
 	while read -r i
 		do IN="$1" node $i > "$temp"
 	done < <(find scripts -name \*.js)
-	cp "$temp" tmp/jq+.jq
 	jq -rf "$temp"
 }
 find . -empty -delete
 DOC=README.md
-rm -rf "$DOC" tmp &> /dev/null || :
-mkdir -p tmp
+rm -rf "$DOC" &> /dev/null || :
 touch "$DOC"
 exec &> "$DOC"
 tsc
