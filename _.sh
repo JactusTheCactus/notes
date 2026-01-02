@@ -5,8 +5,8 @@ jq+() {
 	temp="$(mktemp)"
 	trap "rm -f \"$temp\"" RETURN
 	while read -r i
-		do IN="$1" node $i > "$temp"
-	done < <(find scripts -name \*.js)
+		do awk -f $i "$1" > "$temp"
+	done < <(find scripts -name \*.awk)
 	cp "$temp" tmp/jq+.jq
 	jq -rf "$temp"
 }
@@ -16,22 +16,16 @@ rm -rf "$DOC" tmp &> /dev/null || :
 mkdir -p tmp
 touch "$DOC"
 exec &> "$DOC"
-tsc
 while read -r i
 	do
 		# file names can be prefixed with numbers
 		# if ordering is necessary
-		# <#><filename>
-		# e.g.
-			# 0file.log
-			# 1file.log
-			# 2file.log
+		# i="$(perl -pe 's|^\d*||g' "$i")"
 		printf '# %s\n' "$(perl -pe '
-			s|^pages/\d*(\w+)\.\w+$|$1|g;
+			s|^pages/(\w+)\.\w+$|$1|g;
 			s|_| |g;
 			s|\b(\w)(\w*)\b|\u$1\L$2|g;
-		' <<< "$i"
-		)"
+		' <<< "$i")"
 		page=""
 		case "${i##*.}" in
 			md)page="$(perl -pe 's|^#|##|g' "$i")";;
@@ -42,4 +36,4 @@ while read -r i
 			;;
 		esac
 		printf '%s\n' "$page"
-done < <(find pages -type f | sort)
+done < <(find pages -type f)
