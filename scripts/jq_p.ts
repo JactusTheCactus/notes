@@ -16,11 +16,9 @@ class JQ_P {
 		const cases: Array<number> = [];
 		const switch_var: Array<string> = [];
 		const switch_case_regex = new RegExp(
-			`(${[/(?<!end )switch/, /case/, /default/, /end switch/]
-				.map((i) =>
-					`${i}`.replace(/\/(.*?)\/\w*/, (_, m) => `\\b${m}\\b`)
-				)
-				.join("|")})`
+			`\\b(${[/end switch/, /switch/, /case/, /default/]
+				.map((i) => `${i}`.replace(/\/(.*?)\/\w*/, (_, m) => m))
+				.join("|")})\\b`
 		);
 		while (switch_case_regex.test(this.body)) {
 			switch (this.body.match(switch_case_regex)![1]) {
@@ -33,9 +31,13 @@ class JQ_P {
 				case "case":
 					cases[depth]!++;
 					this.body = this.body.replace(/\bcase ([^\s]+)/, (_, m) => {
-						return `${cases[depth] === 1 ? "" : "el"}if ${
-							switch_var[depth]
-						} == ${m} then`;
+						return [
+							cases[depth]! === 1 ? "if" : "elif",
+							switch_var[depth],
+							"==",
+							m,
+							"then",
+						].join(" ");
 					});
 					break;
 				case "default":

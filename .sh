@@ -17,7 +17,6 @@ rm -rf "$DOC" tmp &> /dev/null || :
 mkdir -p tmp
 touch "$DOC"
 exec &> "$DOC"
-find scripts -name \*.js -delete
 tsc
 while read -r i
 	do
@@ -37,4 +36,4 @@ while read -r i
 		esac
 		printf '%s\n' "$page"
 done < <(find pages -type f | sort)
-find . -empty -delete
+find . -empty -o -name \*.js -delete
