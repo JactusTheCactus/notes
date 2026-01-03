@@ -1,45 +1,48 @@
 import fs from "fs";
 class JQ_P {
     body;
-    constructor(str = "") {
-        this.body = str;
+    constructor(source, str = "") {
+        switch (source) {
+            case "string":
+                this.body = str;
+                break;
+            case "file":
+                this.body = fs.readFileSync(str, { encoding: "utf-8" });
+                break;
+        }
     }
-    set(str) {
-        this.body = str;
-    }
-    get() {
-        return this.body;
-    }
-    switch_case(jq_p) {
-        const jq = new JQ_P(jq_p);
+    switch_case() {
         let depth = 0;
         const cases = [];
         const switch_var = [];
-        while (/((?<!end )switch|case|default|end switch)/.test(jq.get())) {
-            switch (jq.get().match(/((?<!end )switch|case|default|end switch)/)[1]) {
+        const switch_case_regex = new RegExp(`(${[/(?<!end )switch/, /case/, /default/, /end switch/]
+            .map((i) => `${i}`.replace(/\/(.*?)\/\w*/, (_, m) => `\\b${m}\\b`))
+            .join("|")})`);
+        while (switch_case_regex.test(this.body)) {
+            switch (this.body.match(switch_case_regex)[1]) {
                 case "switch":
                     depth++;
-                    switch_var[depth] = jq.get().match(/switch (\S+)/)[1];
-                    jq.set(jq.get().replace(/^.*?switch.*?\n/m, ""));
+                    switch_var[depth] = this.body.match(/\bswitch (\S+)/)[1];
+                    this.body = this.body.replace(/^.*?switch.*?\n/m, "");
                     cases[depth] = 0;
                     break;
                 case "case":
                     cases[depth]++;
-                    jq.set(jq.get().replace(/case ([^\s]+)/, (_, m) => {
+                    this.body = this.body.replace(/\bcase ([^\s]+)/, (_, m) => {
                         return `${cases[depth] === 1 ? "" : "el"}if ${switch_var[depth]} == ${m} then`;
-                    }));
+                    });
                     break;
                 case "default":
-                    jq.set(jq.get().replace(/default/, "else"));
+                    this.body = this.body.replace(/\bdefault\b/, "else");
                     cases[depth] = 0;
                     break;
                 case "end switch":
-                    jq.set(jq.get().replace(/end switch/, "end"));
+                    this.body = this.body.replace(/\bend switch\b/, "end");
                     depth--;
                     break;
             }
         }
-        return jq.get();
+        return this.body;
     }
 }
-console.log(new JQ_P().switch_case(fs.readFileSync(process.env["IN"], { encoding: "utf-8" })));
+console.log(new JQ_P(process.argv[2], process.argv[3]).switch_case());

@@ -3,12 +3,18 @@ set -euo pipefail
 jq+() {
 	local temp
 	temp="$(mktemp)"
-	IN="scripts/$1" node scripts/jq_p.js > "$temp"
-	jq -rf "$temp"
+	node scripts/jq_p.js \
+		file \
+		"scripts/$1" \
+		> "$temp"
+	jq -rf "$temp" || {
+		cp "$temp" "tmp/$1"
+		code "tmp/$1"
+	}
 }
-find . -empty -delete
 DOC=README.md
-rm -rf "$DOC" &> /dev/null || :
+rm -rf "$DOC" tmp &> /dev/null || :
+mkdir -p tmp
 touch "$DOC"
 exec &> "$DOC"
 find scripts -name \*.js -delete
@@ -31,3 +37,4 @@ while read -r i
 		esac
 		printf '%s\n' "$page"
 done < <(find pages -type f | sort)
+find . -empty -delete
