@@ -1,8 +1,8 @@
 import fs from "fs";
 class JQ_P {
 	body: string;
-	constructor() {
-		this.body = "";
+	constructor(str: string = "") {
+		this.body = str;
 	}
 	set(str: string) {
 		this.body = str;
@@ -11,8 +11,7 @@ class JQ_P {
 		return this.body;
 	}
 	switch_case(jq_p: string): string {
-		const jq = new JQ_P();
-		jq.set(jq_p);
+		const jq = new JQ_P(jq_p);
 		let depth: number = 0;
 		const cases: Array<number> = [];
 		const switch_var: Array<string> = [];
