@@ -44,5 +44,8 @@ class JQ_P {
         }
         return this.body;
     }
+    to_jq() {
+        return this.switch_case();
+    }
 }
-console.log(new JQ_P(process.argv[2], process.argv[3]).switch_case());
+console.log(new JQ_P(process.argv[2], process.argv[3]).to_jq());
