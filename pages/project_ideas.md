@@ -1,2 +1,1 @@
-- `QB64` incremental game
-  - extra logic can be written in `C`/`C++`
+
