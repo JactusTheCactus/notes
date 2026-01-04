@@ -35,5 +35,5 @@ while read -r i
 			yml)page="$(yq -o json "$i" | jq+ yml-to-md.jqp)";;
 		esac
 		printf '%s\n' "$page"
-done < <(find pages -type f | sort)
+done < <(find pages -type f ! -empty | sort)
 find . -empty -o -name \*.js -delete
