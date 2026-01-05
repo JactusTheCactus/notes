@@ -1,7 +1,7 @@
 # Excerpts
-- \- The Prodigal Son returns… \
-  \+ Oathbreaker. \
-  \- Boy Scout.
+- > \- > The Prodigal Son returns… \
+  > \+ Oathbreaker. \
+  > \- > Boy Scout.
 # Names
 - Whalefall
 # Quotes
