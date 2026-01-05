@@ -1,7 +1,7 @@
 # Excerpts
-- > `A`: The Prodigal Son returns… \
-  > `B`: Oathbreaker. \
-  > `A`: Boy Scout.
+- > `I`: The Prodigal Son returns… \
+  > `II`: Oathbreaker. \
+  > `I`: Boy Scout.
 # Names
 - Whalefall
 # Quotes
