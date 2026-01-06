@@ -3,7 +3,7 @@
   > `II`: Oathbreaker. \
   > `I`: Boy Scout.
 # Project Ideas
-- Whalefall incremental
+- Whalefall idle
   - Build up reef
   - Better reef attracts more sea creatures
   - More sea creatures attract bigger whales
