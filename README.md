@@ -9,4 +9,5 @@
 - > The bird of Hermes is my name \
   > Eating my wings to keep me tame
 - > Speak to the dead & listen well
-- > May we all rise together, lest we all fall apart
+- > May we all rise together, \
+  > Lest we all fall apart
