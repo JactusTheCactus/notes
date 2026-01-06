@@ -2,8 +2,6 @@
 - > `I`: The Prodigal Son returns… \
   > `II`: Oathbreaker. \
   > `I`: Boy Scout.
-# Names
-- Whalefall
 # Project Ideas
 - Whalefall incremental
 # Quotes
