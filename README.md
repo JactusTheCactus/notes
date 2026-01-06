@@ -1,7 +1,8 @@
 # Excerpts
 - > `I`: The Prodigal Son returns… \
   > `II`: Oathbreaker. \
-  > `I`: Boy Scout.
+  > `I`: Boy Scout. \
+  > `II`: Murderer.
 # Project Ideas
 - Whalefall idle
   - Build up reef
