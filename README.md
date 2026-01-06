@@ -4,6 +4,11 @@
   > `I`: Boy Scout.
 # Project Ideas
 - Whalefall incremental
+  - Build up reef
+  - Better reef attracts more sea creatures
+  - More sea creatures attract bigger whales
+  - Bigger whales become bigger `WHALEFALL`s
+  - Start again
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
