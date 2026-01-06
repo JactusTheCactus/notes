@@ -18,6 +18,8 @@ mkdir -p tmp
 touch "$DOC"
 exec &> "$DOC"
 tsc
+rm pages/project_ideas.md
+echo "- Whalefall incremental" > pages/project_ideas.yml
 while read -r i
 	do
 		# file names can be prefixed with numbers
