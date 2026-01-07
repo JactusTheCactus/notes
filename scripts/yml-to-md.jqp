@@ -13,6 +13,9 @@ def to_md(level; kind):
 			if has("<bq>") then
 				.["<bq>"]
 					| to_md(level; "bq")
+			elif has("<code>") then
+				.["<code>"]
+					| to_md(level; "code")
 			else
 				to_entries[]
 					| indent(level)
@@ -34,6 +37,11 @@ def to_md(level; kind):
 						| gsub("(?<=<<<[0-1]>>>)"; $pre)
 						| gsub("<<<0>>>"; "- ")
 						| gsub("<<<1>>>"; indent(level + 1))
+				case "code"
+					indent(level)
+					+ "- "
+					+ tostring
+						| gsub("\n"; "\n" + indent(level + 1))
 				default
 					indent(level)
 					+ "- "
