@@ -1,5 +1,5 @@
 # Excerpts
-- > `I`: The Prodigal Son returns… \
+- > `I`: The *Prodigal Son* returns… \
   > `II`: Oathbreaker. \
   > `I`: Boy Scout. \
   > `II`: Murderer.
