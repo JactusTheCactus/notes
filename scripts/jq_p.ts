@@ -11,51 +11,47 @@ class JQ_P {
 				break;
 		}
 	}
-	switch_case(): string {
+	compile(): string {
 		let depth: number = 0;
 		const cases: Array<number> = [];
 		const switch_var: Array<string> = [];
-		const switch_case_regex = new RegExp(
-			`\\b(${[/end switch/, /switch/, /case/, /default/]
-				.map((i) => `${i}`.replace(/\/(.*?)\/\w*/, (_, m) => m))
-				.join("|")})\\b`
-		);
-		while (switch_case_regex.test(this.body)) {
-			switch (this.body.match(switch_case_regex)![1]) {
-				case "switch":
-					depth++;
-					switch_var[depth] = this.body.match(/\bswitch (\S+)/)![1]!;
-					this.body = this.body.replace(/^.*?switch.*?\n/m, "");
-					cases[depth] = 0;
-					break;
-				case "case":
-					cases[depth]!++;
-					this.body = this.body.replace(/\bcase ([^\s]+)/, (_, m) => {
-						return [
-							cases[depth]! === 1 ? "if" : "elif",
-							switch_var[depth],
-							"==",
-							m,
-							"then",
-						].join(" ");
-					});
-					break;
-				case "default":
-					this.body = this.body.replace(/\bdefault\b/, "else");
-					cases[depth] = 0;
-					break;
-				case "end switch":
-					this.body = this.body.replace(/\bend switch\b/, "end");
-					depth--;
-					break;
-			}
+		const keys: Record<string, Function> = {
+			"end switch": function (body: string): string {
+				body = body.replace(/\bend switch\b/, "end");
+				depth--;
+				return body;
+			},
+			switch: function (body: string): string {
+				depth++;
+				switch_var[depth] = body.match(/\bswitch (\S+)/)![1]!;
+				body = body.replace(/^.*?switch.*?\n/m, "");
+				cases[depth] = 0;
+				return body;
+			},
+			case: function (body: string): string {
+				cases[depth]!++;
+				body = body.replace(
+					/\bcase ([^\s]+)/,
+					(_, m) =>
+						`${cases[depth] === 1 ? "if" : "elif"} ${
+							switch_var[depth]
+						} == ${m} then`
+				);
+				return body;
+			},
+			default: function (body: string): string {
+				body = body.replace(/\bdefault\b/, "else");
+				cases[depth] = 0;
+				return body;
+			},
+		};
+		const re = new RegExp(`\\b(${Object.keys(keys).join("|")})\\b`);
+		while (re.test(this.body)) {
+			this.body = keys[this.body.match(re)![1]!]!(this.body);
 		}
 		return this.body;
 	}
-	to_jq() {
-		return this.switch_case();
-	}
 }
 console.log(
-	new JQ_P(process.argv[2] as "file" | "string", process.argv[3]).to_jq()
+	new JQ_P(process.argv[2] as "file" | "string", process.argv[3]).compile()
 );

@@ -5,11 +5,13 @@
   > `II`: Murderer.
 # Project Ideas
 - Whalefall idle
+  - A whale dies, becoming a `Whalefall`
+  - A reef forms around the whale carcass
   - Build up reef
-  - Better reef attracts more sea creatures
+  - Better reefs attracts more sea creatures
   - More sea creatures attract bigger whales
-  - Bigger whales become bigger `WHALEFALL`s
-  - Start again
+  - Bigger whales become bigger `Whalefall`s
+  - Repeat
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \

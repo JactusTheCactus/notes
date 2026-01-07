@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 jq+() {
-	local temp
-	temp="$(mktemp)"
+	local temp="$(mktemp)"
 	node scripts/jq_p.js \
 		file \
 		"scripts/$1" \
 		> "$temp"
-	jq -rf "$temp" || {
+	if ! jq -rf "$temp"; then
 		cp "$temp" "tmp/$1"
 		code "tmp/$1"
-	}
+	fi
 }
 DOC=README.md
 rm -rf "$DOC" tmp &> /dev/null || :
