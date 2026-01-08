@@ -3,8 +3,6 @@
   > `II`: Oathbreaker. \
   > `I`: Boy Scout. \
   > `II`: Murderer.
-# Project Ideas
-- null
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
