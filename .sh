@@ -35,4 +35,4 @@ while read -r i
 		esac
 		printf '%s\n' "$page"
 done < <(find pages -type f ! -empty | sort)
-find . -empty -o -name \*.js -delete
+find . \( -empty -o -name \*.js \) -delete
