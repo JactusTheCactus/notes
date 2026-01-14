@@ -1,8 +1,3 @@
-# Excerpts
-- > `I`: The *Prodigal Son* returns… \
-  > `II`: Oathbreaker. \
-  > `I`: Boy Scout. \
-  > `II`: Murderer.
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
