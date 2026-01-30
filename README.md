@@ -1,6 +1,3 @@
-# Project Ideas
-- Custom Markup Language
-  - `/`-based functions
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
