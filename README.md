@@ -5,3 +5,5 @@
 - > Speak to the dead & listen well
 - > May we all rise together, \
   > Lest we all fall apart
+- > That which is not dead can eternal lie \
+  > And with strange æons even death may die
