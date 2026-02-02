@@ -1,5 +1,5 @@
 # Lyrics
-- > <u>*'Idistaviso'* by **SYR**</u> \
+- > *'Idistaviso'* by **SYR** \
   >  \
   > My brother, what have you done? \
   > You've chosen gold over blood \
