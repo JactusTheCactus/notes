@@ -7,3 +7,47 @@
   > Lest we all fall apart
 - > That which is not dead can eternal lie \
   > And with strange æons even death may die
+- > # 'Idistaviso' by *SYR* \
+  > My brother, what have you done? \
+  > You've chosen gold over blood \
+  > When you felt the grip of the icy hand \
+  > Did you follow fear into this land? \
+  > My brother, what have you done? \
+  >  \
+  > Only now do I see \
+  > You are a stranger to me \
+  > Did they bend your will to their command \
+  > Or tempt you with a generous hand? \
+  > You are a stranger to me \
+  > You are a stranger to me \
+  >  \
+  > And I will live with the works of my hands \
+  > I am well aware of all that I've done and all that I am \
+  > I will live with the choices that I've made \
+  > Can you say the same \
+  > Or will you carry your rеgrets 'til the end of your days? \
+  >  \
+  > You and I arе not the same \
+  > Despite the blood within our veins \
+  > When they sent you to make war on me \
+  > Did your pride foresee a victory? \
+  > You and I are not the same \
+  >  \
+  > What is this hate you have for me? \
+  > Were you that easy to deceive? \
+  > Every poison word they spoke of me \
+  > You listened to so eagerly \
+  > What is this hate you have for me? \
+  > What is this hate you have for me? \
+  >  \
+  > And I will live with the works of my hands \
+  > I am well aware of all that I've done and all that I am \
+  > I will live with the choices that I've made \
+  > Can you say the same \
+  > Or will you carry your regrets 'til the end of your days? \
+  >  \
+  > I will live with the works of my hands \
+  > I am well aware of all that I've done and all that I am \
+  > I will live with the choices that I've made \
+  > Can you say the same \
+  > Or will you carry your regrets 'til the end of your days?"
