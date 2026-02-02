@@ -7,7 +7,7 @@
   > Lest we all fall apart
 - > That which is not dead can eternal lie \
   > And with strange æons even death may die
-- > *'Idistaviso'* by **SYR** \
+- > <u>*'Idistaviso'* by **SYR**</u> \
   >  \
   > My brother, what have you done? \
   > You've chosen gold over blood \
