@@ -1,6 +1,0 @@
-- fzf:
-  - pipe an array into fzf, which is command substituted into a map as a key:
-    - >-
-      ```sh
-      echo "${KEYS[@]}" | echo "${MAP[$(fzf)]}"
-      ```
