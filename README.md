@@ -45,9 +45,17 @@
   > Can you say the same \
   > Or will you carry your regrets 'til the end of your days?
 # Project Ideas
-- fzf
-  - pipe an array into fzf, which is command substituted into a map as a key
-    - ```sh echo "${KEYS[@]}" | echo "${MAP[$(fzf)]}" ```
+## `fzf`
+pipe an array into fzf, which is command substituted into a map as a key
+```bash
+declare -A KEYS=(
+	[a]=1
+	[b]=2
+	[c]=3
+)
+key="$(echo "${KEYS[@]}" | fzf)" # select b
+echo "<${MAP[$key]}>" # <2>
+```
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
