@@ -47,7 +47,7 @@
 # Project Ideas
 - fzf
   - pipe an array into fzf, which is command substituted into a map as a key
-    - `echo "${KEYS[@]}" | echo "${MAP[$(fzf)]}"`
+    - ```sh echo "${KEYS[@]}" | echo "${MAP[$(fzf)]}" ```
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
