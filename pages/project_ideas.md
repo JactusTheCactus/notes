@@ -7,5 +7,5 @@ declare -A KEYS=(
 	[c]=3
 )
 key=$(fzf <<< "${KEYS[@]}") # select b
-echo "<${MAP[$key]}>" # <2>
+echo "<${MAP["$key"]}>" # <2>
 ```
