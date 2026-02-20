@@ -67,4 +67,4 @@ echo "<${MAP["$key"]}>" # <2>
   > And with strange æons even death may die
 - > Birds truly are remarkable. Did you know that they can sense when a thunderstorm approaches & directly seek shelter. They know instinctively when danger approaches. \
   >  \
-  > Do you hear any birds?
+  > The birds are silent now, you'd do well to run for shelter, little one.
