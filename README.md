@@ -56,6 +56,8 @@ declare -A KEYS=(
 key=$(fzf <<< "${KEYS[@]}") # select b
 echo "<${MAP["$key"]}>" # <2>
 ```
+## assembly macros
+- recreating `C` from "First Principles"
 # Quotes
 - > How high can you fly with broken wings?
 - > The bird of Hermes is my name \
